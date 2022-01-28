@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 27, 2022 at 04:03 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.27
+-- Host: localhost
+-- Generation Time: Jan 28, 2022 at 11:26 PM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.2.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,10 +30,18 @@ SET time_zone = "+00:00";
 CREATE TABLE `contacts` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `contacts`
+--
+
+INSERT INTO `contacts` (`id`, `name`, `email`, `phone`, `created_at`, `updated_at`) VALUES
+(1, 'asd', 'sadf@dfasd.com', 'asdf', '2022-01-28 16:18:41', '2022-01-28 16:18:41');
 
 -- --------------------------------------------------------
 
@@ -71,7 +79,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2022_01_27_073029_add_column_username', 2),
-(5, '2022_01_27_084926_create_contacts_table', 3);
+(5, '2022_01_27_084926_create_contacts_table', 3),
+(6, '2022_01_28_231559_add_column_email', 4);
 
 -- --------------------------------------------------------
 
@@ -108,7 +117,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'pae studio', 'pae', 'panutatinfo@gmail.com', NULL, '$2y$10$bgiytGuuSJhAIyZQMTlZjOrfbRJe.UtgMWFc4tv.R29QQmzuTnXSa', NULL, '2022-01-27 01:35:04', '2022-01-27 01:35:04');
+(1, 'pae studio', 'pae', 'panutatinfo@gmail.com', NULL, '$2y$10$bgiytGuuSJhAIyZQMTlZjOrfbRJe.UtgMWFc4tv.R29QQmzuTnXSa', NULL, '2022-01-27 01:35:04', '2022-01-27 01:35:04'),
+(3, 'siam studio', 'siam', 'siam@gmail.com', NULL, '$2y$10$KJ7BZ/QXjxOIiGu3SE9xF.lwYTv.ZQ.R.ht3wmEf4xIhoZsJ878Gm', NULL, '2022-01-27 14:35:08', '2022-01-27 14:35:08');
 
 --
 -- Indexes for dumped tables
@@ -153,7 +163,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -165,13 +175,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
