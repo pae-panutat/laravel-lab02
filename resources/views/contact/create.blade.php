@@ -1,6 +1,15 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
+       @if ($errors->all())
+       <ul>
+            @foreach ($errors->all() as $error)
+                <li class="alert alert-danger">
+                    {{ $error }}
+                </li>
+            @endforeach
+        </ul>
+       @endif
         {!! Form::open(['action' => 'ContactController@store', 'method' => 'POST']) !!}
             <div class="col-md-6">
                 <div class="form-group">
