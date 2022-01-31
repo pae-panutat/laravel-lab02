@@ -51,6 +51,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+
 article,
 aside,
 figcaption,
@@ -66,7 +67,8 @@ section {
 
 body {
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Kanit', sans-serif;
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;

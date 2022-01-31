@@ -78,8 +78,13 @@ class ContactController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd($request);
-        dd($id);
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required'
+        ]);
+        Contact::find($id)->update($request->all());
+        return redirect('/contact');
     }
 
     /**
@@ -90,6 +95,9 @@ class ContactController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // dd($id);
+        $user = Contact::find($id);
+        $user->delete();
+        return redirect()->route('contact.index')->with('success', 'ลบข้อมูลเรียบร้อย');
     }
 }

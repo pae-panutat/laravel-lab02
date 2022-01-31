@@ -11,10 +11,15 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" defer></script>
+    <script src="{{ asset('js/bonus.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Kanit:wght@200;300&display=swap" rel="stylesheet">
+
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
