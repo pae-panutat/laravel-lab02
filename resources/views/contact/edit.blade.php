@@ -10,23 +10,24 @@
             @endforeach
         </ul>
        @endif
-        {!! Form::open(['action' => 'ContactController@store', 'method' => 'POST']) !!}
+        {!! Form::open(['action' => ['ContactController@update', $data->id], 'method' => 'PUT']) !!}
             <div class="col-md-6">
                 <div class="form-group">
                     {!! Form::label('NAME') !!}
-                    {!! Form::text('name', null, ["class" => "form-control"]) !!}
+                    {!! Form::text('name', $data->name, ["class" => "form-control"]) !!}
                 </div>
                 <div class="form-group">
                     {!! Form::label('E-MAIL') !!}
-                    {!! Form::text('email', null, ["class" => "form-control"]) !!}
+                    {!! Form::text('email', $data->email, ["class" => "form-control"]) !!}
                 </div>
                 <div class="form-group">
                     {!! Form::label('PHONE') !!}
-                    {!! Form::text('phone', null, ["class" => "form-control"]) !!}
+                    {!! Form::text('phone', $data->phone, ["class" => "form-control"]) !!}
                 </div>
-                <input type="submit" value="Submit" class="btn btn-success">
+                <input type="submit" value="Update" class="btn btn-primary">
                 <a href="/contact"   class="btn btn-danger" >Back</a>
             </div>
         {!! Form::close() !!}
     </div>
+
 @endsection

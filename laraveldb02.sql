@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jan 28, 2022 at 11:26 PM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.2.31
+-- Host: 127.0.0.1
+-- Generation Time: Jan 31, 2022 at 02:46 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,7 +41,10 @@ CREATE TABLE `contacts` (
 --
 
 INSERT INTO `contacts` (`id`, `name`, `email`, `phone`, `created_at`, `updated_at`) VALUES
-(1, 'asd', 'sadf@dfasd.com', 'asdf', '2022-01-28 16:18:41', '2022-01-28 16:18:41');
+(1, 'asd', 'sadf@dfasd.com', 'asdf', '2022-01-28 16:18:41', '2022-01-28 16:18:41'),
+(2, 'กหดฟกดฟกด', 'adf@dfadfa.com', 'adf', '2022-01-31 03:26:32', '2022-01-31 03:26:32'),
+(3, 'fadf', 'sdfadsf@dfadf.com', 'adsfadf', '2022-01-31 06:55:54', '2022-01-31 06:55:54'),
+(4, 'กฟดฟกด', 'asdf@adsf.com', '08899999', '2022-01-31 07:00:32', '2022-01-31 07:00:32');
 
 -- --------------------------------------------------------
 
@@ -163,7 +166,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
