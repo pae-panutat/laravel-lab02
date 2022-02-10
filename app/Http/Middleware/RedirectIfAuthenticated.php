@@ -18,6 +18,15 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
+        // dd($request);
+        if($request->remember===null){
+            setcookie('login_username',$request->username,100);
+            setcookie('login_pass',$request->password,100);
+         }
+         else{
+            setcookie('login_username',$request->username,time()+60*60*24*100);
+            setcookie('login_pass',$request->password,time()+60*60*24*100);
+         }
         if (Auth::guard($guard)->check()) {
             return redirect(RouteServiceProvider::HOME);
         }
